@@ -9,4 +9,24 @@ class FoodsController < ApplicationController
     # foods/new
     @food = Food.new
   end
+  
+  def create
+    # creates a food
+    @user = User.find(1) # TODO: implement current_user method and remove this line
+    # @user = current_user
+    @food = Food.new(food_params)
+    @food.user = @user
+    # @food.user = current_user
+
+    if @food.save
+      redirect_to foods_path
+    else
+      flash[:alert] = "Food could not be saved."
+      render :new
+    end
+  end
+  
+  def food_params
+    params.require(:food).permit(:name, :measurement_unit, :price, :quantity)
+  end
 end
