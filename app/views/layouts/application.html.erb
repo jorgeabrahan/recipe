@@ -10,9 +10,15 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <p class="notice"><%= notice %></p>
+ <body class="<%= user_signed_in? ? '' : 'bgmain' %>">
+    <% if user_signed_in? %>
+      <%= render partial: "shared/navbar" %>
+      <h2>Welcome "<%= @user.name.capitalize %>"</h2>
+    <% end %>
+    
+     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
+    </div>
   </body>
 </html>
