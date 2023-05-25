@@ -9,7 +9,7 @@ class FoodsController < ApplicationController
     # foods/new
     @food = Food.new
   end
-  
+
   def create
     # creates a food
     @user = User.find(1) # TODO: implement current_user method and remove this line
@@ -21,7 +21,7 @@ class FoodsController < ApplicationController
     if @food.save
       redirect_to foods_path
     else
-      flash[:alert] = "Food could not be saved."
+      flash[:alert] = 'Food could not be saved.'
       render :new
     end
   end
