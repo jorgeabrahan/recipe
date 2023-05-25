@@ -5,18 +5,22 @@
   margin-inline: auto;
   border: 3px solid black;
 }
+
 .food-row--header {
-  background-color: #cccccc;
+  background-color: #ccc;
   text-align: left;
 }
+
 .food-row td,
 .food-row th {
   padding: 0.3rem 0.8rem;
 }
+
 .food-row td:not(:last-child),
 .food-row th:not(:last-child) {
   border-right: 3px solid black;
 }
+
 .food-row:nth-child(even) {
-  background-color: #eeeeee;
+  background-color: #eee;
 }
