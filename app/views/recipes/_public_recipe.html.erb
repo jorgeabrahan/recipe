@@ -1,0 +1,10 @@
+<div class="public-recipe">
+  <div>
+    <h2><%= link_to recipe.name, recipe_path(recipe) %></h2>
+    <p>By: <%= recipe.user.name %></p>
+  </div>
+  <div>
+    <p><strong>Total food items: <%= recipe.recipe_foods.length %></strong></p>
+    <p><strong>Total price: $<%= recipe.total_price %></strong></p>
+  </div>
+</div>
