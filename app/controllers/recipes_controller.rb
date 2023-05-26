@@ -39,5 +39,11 @@ class RecipesController < ApplicationController
 
   def recipe_params
     params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public)
+  def index; end
+
+  def show; end
+
+  def public_recipes
+    @recipes = Recipe.where(public: true).order(created_at: :desc)
   end
 end

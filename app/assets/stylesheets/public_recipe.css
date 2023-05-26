@@ -1,0 +1,16 @@
+.public-recipes {
+  display: grid;
+  gap: 1rem;
+}
+
+.public-recipe {
+  border: 3px solid black;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+.public-recipe div:last-child {
+  font-size: 1.1rem;
+}

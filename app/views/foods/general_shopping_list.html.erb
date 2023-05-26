@@ -1,0 +1,15 @@
+<section class="container m-block-2">
+  <h1 class="title">Shopping List</h1>
+  <div class="flex justify-center gap-2 mb-2">
+    <p><strong>Amount of food items to buy: <%= @shopping_list.length %></strong></p>
+    <p><strong>Total value of food needed: $<%= @total %></strong></p>
+  </div>
+  <table class="table">
+    <tr class="row row--header">
+      <th>Food</th>
+      <th>Quantity</th>
+      <th>Price</th>
+    </tr>
+    <%= render partial: 'recipe_food', collection: @shopping_list, as: :recipe_food %>
+  </table>
+</section>
