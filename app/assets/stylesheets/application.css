@@ -65,16 +65,16 @@
   margin-bottom: 1.2rem;
 }
 
-.check-box input{
-    width: 24px;
-    height: 24px;
-    margin-bottom: 0;
+.check-box input {
+  width: 24px;
+  height: 24px;
+  margin-bottom: 0;
 }
 
-.check-box label{
-    height: 24px;
-    top: initial;
-    position: relative;
+.check-box label {
+  height: 24px;
+  top: initial;
+  position: relative;
 }
 
 .check-box {

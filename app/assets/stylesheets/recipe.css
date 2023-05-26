@@ -1,19 +1,23 @@
+.add-recipe-container {
+  max-width: 1000px;
+  margin-inline: auto;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
 
 .recipe-container {
   max-width: 1024px;
   margin-inline: auto;
   padding-inline: 1rem;
-  border: 3px solid black;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
 }
 
 .recipe-container .recipe-row {
   display: flex;
-  gap: 1rem;
-}
-
-.recipe-container .recipe-row .recipe-row-left {
-  width: '30%';
-}
-.recipe-container .recipe-row .recipe-row-left {
-  width: '70%';
+  gap: 2rem;
+  border: 1px solid black;
+  border-radius: 8px;
+  padding: 24px;
 }
