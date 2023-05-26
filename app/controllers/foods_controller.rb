@@ -15,11 +15,9 @@ class FoodsController < ApplicationController
 
   def create
     # creates a food
-    @user = User.find(1) # TODO: implement current_user method and remove this line
-    # @user = current_user
+    @user = current_user
     @food = Food.new(food_params)
-    @food.user = @user
-    # @food.user = current_user
+    @food.user = current_user
 
     if @food.save
       redirect_to foods_path
