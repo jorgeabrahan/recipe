@@ -8,9 +8,12 @@
 </div>
 <div class="recipe-container">
 <% @recipes.each do |recipe| %>
-<tr class="recipe-row">
-  <td><div><%= recipe.name %></div><%= link_to 'REMOVE', recipe_path(recipe), data: { turbo_method: :delete } %><div></div></td>
-  <td><%= recipe.description %></td>
-</tr>
+<div class="recipe-row">
+  <div class="recipe-row-left">
+    <div><%= recipe.name %></div>
+    <div><%= link_to 'REMOVE', recipe_path(recipe), data: { turbo_method: :delete } %></div>
+  </div>
+  <div class="recipe-row-right"><%= recipe.description %></div>
+</div>
 <% end %>
 </div>
