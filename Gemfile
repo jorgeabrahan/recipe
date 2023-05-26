@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '3.2.1'
+ruby '3.2.2'
 
 gem 'rubocop', '>= 1.0', '< 2.0'
 
@@ -53,8 +53,8 @@ gem 'bootsnap', require: false
 # gem "image_processing", "~> 1.2"
 
 # Bootstrap
-gem 'autoprefixer-rails'
-gem 'bootstrap-sass', '~> 3.4.1'
+# gem 'autoprefixer-rails'
+# gem 'bootstrap-sass', '~> 3.4.1'
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
