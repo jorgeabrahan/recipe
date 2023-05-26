@@ -28,8 +28,7 @@ class FoodsController < ApplicationController
   end
 
   def destroy
-    @food = Food.find(params[:id]) # TODO: implement current_user method and remove this line
-    # @food = current_user.foods.find(params[:id])
+    @food = current_user.foods.find(params[:id])
     @food.destroy
     redirect_to foods_path
   end
