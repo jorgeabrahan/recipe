@@ -13,3 +13,74 @@
  *= require_tree .
  *= require_self
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+.container {
+  max-width: 1024px;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+.btn {
+  border: 3px solid black;
+  padding: 0.4rem 0.8rem;
+  display: block;
+  max-width: max-content;
+  text-decoration: none;
+  color: black;
+  font-weight: 600;
+  box-shadow: 4px 4px 0 0 black;
+}
+
+.btn-right {
+  margin-left: auto;
+}
+
+.btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: none;
+}
+
+.field {
+  position: relative;
+}
+
+.field label {
+  top: -0.6rem;
+  left: 0.6rem;
+  padding-inline: 0.2rem;
+  position: absolute;
+  background-color: white;
+  font-size: 0.9rem;
+}
+
+.field input {
+  width: 100%;
+  outline: transparent;
+  border: 3px solid black;
+  border-radius: 5px;
+  padding: 0.4rem 0.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.m-block-2 {
+  margin-block: 2rem;
+}
+
+.m-block-3 {
+  width: 400px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
+}
+
+.bgmain {
+  background-image: url("background.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
