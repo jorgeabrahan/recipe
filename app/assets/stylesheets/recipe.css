@@ -8,4 +8,12 @@
 
 .recipe-container .recipe-row {
   display: flex;
+  gap: 1rem;
+}
+
+.recipe-container .recipe-row .recipe-row-left {
+  width: '30%';
+}
+.recipe-container .recipe-row .recipe-row-left {
+  width: '70%';
 }
