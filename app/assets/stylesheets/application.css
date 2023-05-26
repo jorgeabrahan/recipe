@@ -1,6 +1,8 @@
 /*
 *= require_tree .
+*= require_self
 */
+
 .container {
   max-width: 1024px;
   margin-inline: auto;
@@ -55,4 +57,17 @@
 
 .mb-2 {
   margin-bottom: 2rem;
+}
+
+.m-block-3 {
+  width: 400px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.bgmain {
+  background-image: url("background.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
