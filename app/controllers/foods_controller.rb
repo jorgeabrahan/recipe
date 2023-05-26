@@ -37,8 +37,7 @@ class FoodsController < ApplicationController
     @shopping_list = []
     @total = 0
     # for each current user recipe
-    # current_user.recipes.each do |recipe|
-    User.first.recipes.each do |recipe|
+    current_user.recipes.each do |recipe|
       # for each recipe food in the recipe
       recipe.recipe_foods.each do |recipe_food|
         # if the recipe food is already added in the current user foods array
