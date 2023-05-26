@@ -55,12 +55,32 @@
   font-size: 0.9rem;
 }
 
-.field input {
+.field input,
+.field textarea {
   width: 100%;
   outline: transparent;
   border: 3px solid black;
   border-radius: 5px;
   padding: 0.4rem 0.8rem;
+  margin-bottom: 1.2rem;
+}
+
+.check-box input{
+    width: 24px;
+    height: 24px;
+    margin-bottom: 0;
+}
+
+.check-box label{
+    height: 24px;
+    top: initial;
+    position: relative;
+}
+
+.check-box {
+  display: flex;
+  align-items: center;
+  gap: 24px;
   margin-bottom: 1.2rem;
 }
 
@@ -73,6 +93,11 @@
   background-color: white;
   padding: 20px;
   border-radius: 8px;
+}
+
+.m-block-4 {
+  width: 500px;
+  padding: 20px;
 }
 
 .mb-2 {
