@@ -1,6 +1,8 @@
 /*
 *= require_tree .
+*= require_self
 */
+
 .title {
   font-size: 2.1rem;
   text-align: center;
@@ -55,6 +57,13 @@
   margin-bottom: 1.2rem;
 }
 
+.m-block-3 {
+  width: 400px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
 .m-block-2 {
   margin-block: 2rem;
 }
@@ -63,12 +72,12 @@
   margin-top: 2rem;
 }
 
-.mb-2 {
-  margin-bottom: 2rem;
-}
-
 .mb-1 {
   margin-bottom: 1rem;
+}
+
+.mb-2 {
+  margin-bottom: 2rem;
 }
 
 .flex {
@@ -81,4 +90,10 @@
 
 .gap-2 {
   gap: 2rem;
+}
+
+.bgmain {
+  background-image: url("background.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
