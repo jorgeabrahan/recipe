@@ -30,7 +30,6 @@ class RecipesController < ApplicationController
     redirect_to recipes_path
   end
 
-
   private
 
   def set_user
@@ -39,9 +38,7 @@ class RecipesController < ApplicationController
 
   def recipe_params
     params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public)
-  def index; end
-
-  def show; end
+  end
 
   def public_recipes
     @recipes = Recipe.where(public: true).order(created_at: :desc)
