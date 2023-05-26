@@ -59,6 +59,26 @@
   margin-block: 2rem;
 }
 
+.mt-2 {
+  margin-top: 2rem;
+}
+
 .mb-2 {
   margin-bottom: 2rem;
+}
+
+.mb-1 {
+  margin-bottom: 1rem;
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.gap-2 {
+  gap: 2rem;
 }
