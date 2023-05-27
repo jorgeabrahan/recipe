@@ -91,47 +91,47 @@
 .m-block-4 {
   width: 500px;
   padding: 20px;
+}
 
-  .m-block-2 {
-    margin-block: 2rem;
-  }
+.mt-2 {
+  margin-top: 2rem;
+}
 
-  .mt-2 {
-    margin-top: 2rem;
-  }
+.mb-1 {
+  margin-bottom: 1rem;
+}
 
-  .mb-1 {
-    margin-bottom: 1rem;
-  }
+.mb-2 {
+  margin-bottom: 2rem;
+}
 
-  .mb-2 {
-    margin-bottom: 2rem;
-  }
+.flex {
+  display: flex;
+}
 
-  .flex {
-    display: flex;
-  }
+.justify-center {
+  justify-content: center;
+}
 
-  .justify-center {
-    justify-content: center;
-  }
+.gap-2 {
+  gap: 2rem;
+}
 
-  .gap-2 {
-    gap: 2rem;
-  }
+.mainbg {
+  background-image: url('background.jpeg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  position: relative;
+}
 
-  .bgmain {
-    background-image: url('background.jpeg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100vh;
-    position: relative;
-  }
+.center-absolute {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
-  .center-absolute {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
+.center-absolute form {
+  width: 100%;
 }
