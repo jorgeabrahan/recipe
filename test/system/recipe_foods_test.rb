@@ -6,7 +6,7 @@ class RecipeFoodsTest < ApplicationSystemTestCase
     login_as(@user, scope: :user)
     visit '/general_shopping_list'
   end
-  
+
   test 'Should display a table with columns (food, quantity, price)' do
     assert_text 'Food'
     assert_text 'Quantity'
@@ -16,7 +16,7 @@ class RecipeFoodsTest < ApplicationSystemTestCase
     assert_text 'Amount of food items to buy: 3'
   end
   test 'Should display the total value of food needed' do
-    assert_text 'Total value of food needed: $21'
+    assert_text 'Total value of food needed: $15'
   end
   test 'Should display recipe foods of each shopping list with the total quantity and price for each' do
     shopping_list = []

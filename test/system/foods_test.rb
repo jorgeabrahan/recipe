@@ -7,7 +7,7 @@ class FoodsTest < ApplicationSystemTestCase
     login_as(user, scope: :user)
     visit foods_path
   end
-  
+
   test 'Should display a table with columns (food, measurement unit, unit price, actions)' do
     assert_text 'Food'
     assert_text 'Measurement unit'
@@ -31,6 +31,6 @@ class FoodsTest < ApplicationSystemTestCase
   end
   test 'Should display a link to add a new food that should redirect to new food path' do
     click_link 'Add Food'
-    assert_current_path new_food_path()
+    assert_current_path new_food_path
   end
 end
