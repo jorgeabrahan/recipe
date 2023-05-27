@@ -1,4 +1,4 @@
-<h1><%= @user.name.capitalize %>'s Recipes</h1>
+<h1 class="title"><%= @user.name.capitalize %>'s Recipes</h1>
 
 <div class="add-recipe-container">
    <%= link_to 'Add a new recipe', new_recipe_path, class: "btn btn-right mb-2" %>
@@ -14,5 +14,3 @@
 </div>
 <% end %>
 </div>
-<h1>Recipes#index</h1>
-<p>Find me in app/views/recipes/index.html.erb</p>
