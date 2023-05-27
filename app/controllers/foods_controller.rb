@@ -1,8 +1,11 @@
 class FoodsController < ApplicationController
   def index
     # foods
-    @foods = Food.all # TODO: implement current_user method and remove this line
-    # @foods = current_user.foods
+    unless user_signed_in?
+      # should not display the foods of the logged in user if the user is not logged in!
+      redirect_to '/users/sign_in'
+    end
+    @foods = current_user.foods
   end
 
   def new
@@ -12,11 +15,9 @@ class FoodsController < ApplicationController
 
   def create
     # creates a food
-    @user = User.find(1) # TODO: implement current_user method and remove this line
-    # @user = current_user
+    @user = current_user
     @food = Food.new(food_params)
-    @food.user = @user
-    # @food.user = current_user
+    @food.user = current_user
 
     if @food.save
       redirect_to foods_path
@@ -27,8 +28,7 @@ class FoodsController < ApplicationController
   end
 
   def destroy
-    @food = Food.find(params[:id]) # TODO: implement current_user method and remove this line
-    # @food = current_user.foods.find(params[:id])
+    @food = current_user.foods.find(params[:id])
     @food.destroy
     redirect_to foods_path
   end
@@ -37,8 +37,7 @@ class FoodsController < ApplicationController
     @shopping_list = []
     @total = 0
     # for each current user recipe
-    # current_user.recipes.each do |recipe|
-    User.first.recipes.each do |recipe|
+    current_user.recipes.each do |recipe|
       # for each recipe food in the recipe
       recipe.recipe_foods.each do |recipe_food|
         # if the recipe food is already added in the current user foods array

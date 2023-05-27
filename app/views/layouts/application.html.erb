@@ -12,12 +12,12 @@
 
 <body class="<%= user_signed_in? ? '' : 'mainbg' %>">
       <% if user_signed_in? %>
-      <div><%= render partial: "shared/menu" %></div>   
+        <div><%= render partial: "shared/menu" %></div>   
       <% end %>
       <div class="main">
-      <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-      <%= yield %>
+        <%= yield %>
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
       </div> 
   </body>
 </html>
