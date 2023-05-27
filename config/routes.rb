@@ -7,4 +7,7 @@ Rails.application.routes.draw do
   get '/general_shopping_list', to: 'foods#general_shopping_list'
   
   devise_for :users
+   resources :recipes do
+    resources :recipe_foods
+  end
 end
