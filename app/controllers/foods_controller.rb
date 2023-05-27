@@ -33,26 +33,36 @@ class FoodsController < ApplicationController
     redirect_to foods_path
   end
 
+  def calculate_total(shopping_list)
+    total = 0
+    shopping_list.each do |element|
+      total += element.quantity * element.food.price
+    end
+    total
+  end
+
   def general_shopping_list
+    @foods = current_user.foods
     @shopping_list = []
-    @total = 0
-    # for each current user recipe
     current_user.recipes.each do |recipe|
-      # for each recipe food in the recipe
       recipe.recipe_foods.each do |recipe_food|
-        # if the recipe food is already added in the current user foods array
-        existing_food = @shopping_list.find { |element| element.food.name == recipe_food.food.name }
-        if existing_food.nil?
+        existing_food = @foods.find { |food| food.name == recipe_food.food.name }
+        difference = recipe_food.quantity - existing_food.quantity
+        next unless difference.positive?
+
+        existing_shopping_food = @shopping_list.find { |element| element.food.name == recipe_food.food.name }
+        if existing_shopping_food.nil?
+          recipe_food.quantity = difference
           @shopping_list.push(recipe_food)
         else
-          existing_food.quantity += recipe_food.quantity
+          existing_shopping_food.quantity += recipe_food.quantity
         end
-        @total += recipe_food.food.price * recipe_food.quantity
       end
     end
+    @total = calculate_total(@shopping_list)
   end
 
   def food_params
-    params.require(:food).permit(:name, :measurement_unit, :price, :quantity)
+    params.require(:food).permit(:name, :measurement_unit, :quantity, :price)
   end
 end

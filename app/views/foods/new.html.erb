@@ -9,6 +9,10 @@
       <%= f.text_field :measurement_unit, placeholder: 'e.g.: grams', required: true %>
     </div>
     <div class="field">
+      <%= f.label :quantity %>
+      <%= f.number_field :quantity, min: 1, required: true %>
+    </div>
+    <div class="field">
       <%= f.label :price %>
       <%= f.number_field :price, min: 1, required: true %>
     </div>
