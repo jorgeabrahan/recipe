@@ -1,14 +1,14 @@
 <h1 class="title"><%= @user.name.capitalize %>'s Recipes</h1>
 
-<div class="add-recipe-container">
+<div class="container">
    <%= link_to 'Add a new recipe', new_recipe_path, class: "btn btn-right mb-2" %>
 </div>
 <div class="recipe-container">
 <% @recipes.each do |recipe| %>
 <div class="recipe-row">
   <div class="recipe-row-left">
-    <div><h2><%= link_to recipe.name, recipe_path(recipe) %></h2></div>
-    <div><%= link_to 'REMOVE', recipe_path(recipe), data: { turbo_method: :delete } %></div>
+    <h2><%= link_to recipe.name, recipe_path(recipe) %></h2>
+    <%= link_to 'REMOVE', recipe_path(recipe), data: { turbo_method: :delete } %>
   </div>
   <div class="recipe-row-right"><%= recipe.description %></div>
 </div>
