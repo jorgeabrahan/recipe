@@ -12,7 +12,6 @@
 
  <body class="<%= user_signed_in? ? '' : 'bgmain' %>">
     <% if user_signed_in? %>
-      <%= render partial: "shared/navbar" %>
       <h2>Welcome "<%= @user.name.capitalize %>"</h2>
     <% end %>
     

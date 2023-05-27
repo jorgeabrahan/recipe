@@ -1,2 +1,16 @@
+<h1><%= @user.name.capitalize %>'s Recipes</h1>
+
+<div class="">
+  <%= link_to new_recipe_path, class: "" do %>
+    <%= content_tag :i, nil, class: "" %>
+    Add a new recipe
+  <% end %>
+</div>
+<% @recipes.each do |recipe| %>
+<tr class="recipe-row">
+  <td><div><%= recipe.name %></div><%= link_to 'REMOVE', recipe_path(recipe), data: { turbo_method: :delete } %><div></div></td>
+  <td><%= recipe.description %></td>
+</tr>
+<% end %>
 <h1>Recipes#show</h1>
 <p>Find me in app/views/recipes/show.html.erb</p>
