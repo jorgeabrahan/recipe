@@ -10,14 +10,14 @@
     <%= javascript_importmap_tags %>
   </head>
 
-I <body class="<%= user_signed_in? ? '' : 'bgmain' %>">
+  <body class="<%= user_signed_in? ? '' : 'mainbg' %>">
     <% if user_signed_in? %>
-      <h2>Welcome </h2>
+      <div><%= render partial: "shared/menu" %></div>   
     <% end %>
-    
-    <%= yield %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+    <div class="main">
+      <%= yield %>
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
     </div>
- </body>
+  </body>
 </html>
