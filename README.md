@@ -73,6 +73,14 @@ General shopping list (URI: '/general_shopping_list') just for logged in users
 
 ![General shopping list](./repo_images/should_display_general_shopping_list.png)
 
+Rspec tests running successfully
+
+![Rspec tests](./repo_images/successfull_rspec_tests.png)
+
+Capybara tests running successfully
+
+![Capybara tests](./repo_images/successfull_capybara_tests.png)
+
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
