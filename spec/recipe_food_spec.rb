@@ -20,4 +20,7 @@ RSpec.describe RecipeFood, type: :model do
     @recipe_food.quantity = 'Hello'
     expect(@recipe_food).to_not be_valid
   end
+  it 'Should be valid if data is valid and supplied' do
+    expect(@recipe_food).to be_valid
+  end
 end
