@@ -20,16 +20,12 @@ class RecipeFoodsController < ApplicationController
       redirect_to recipe_path(@recipe), alert: 'Ingredient already exists'
     else
       @recipe_user_food = Food.find(recipe_food_params[:food_id])
-      unless @recipe_user_food.quantity >= recipe_food_params[:quantity].to_i
-        return redirect_to recipe_path(@recipe), alert: 'Quantity in stock is less.'
-      end
 
       @recipe_food = RecipeFood.new(recipe_food_params)
       @recipe_food.recipe = @recipe
 
       if @recipe_food.save
         redirect_to recipe_path(@recipe), notice: 'New ingredient was successfully added.'
-        @recipe_user_food.quantity -= recipe_food_params[:quantity].to_i
         @recipe_user_food.save
       else
         flash[:alert] = @recipe_food.errors.full_messages.first if @recipe_food.errors.any?
@@ -49,13 +45,9 @@ class RecipeFoodsController < ApplicationController
 
   def update
     @recipe_user_food = Food.find(recipe_food_params[:food_id])
-    unless @recipe_user_food.quantity >= recipe_food_params[:quantity].to_i
-      return redirect_to recipe_path(@recipe), alert: 'Quantity in stock is less.'
-    end
 
     if @recipe_food.update(recipe_food_params)
       redirect_to recipe_path(@recipe), notice: 'Ingredient was successfully modified.'
-      @recipe_user_food.quantity -= recipe_food_params[:quantity].to_i
       @recipe_user_food.save
     else
       flash[:alert] = @recipe_food.errors.full_messages.first if @recipe_food.errors.any?
