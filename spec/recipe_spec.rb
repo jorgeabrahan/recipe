@@ -12,7 +12,7 @@ RSpec.describe Recipe, type: :model do
   it 'Name should be present' do
     subject.name = nil
     expect(subject).to_not be_valid
-  endNOT
+  end
 
   it 'Name should have valid value' do
     expect(subject.name).to eql 'Pizza'
