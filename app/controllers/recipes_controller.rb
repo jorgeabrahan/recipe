@@ -10,6 +10,11 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new
   end
 
+  def show
+    @recipe = Recipe.find(params[:id])
+    @recipe_foods = @recipe.recipe_foods.includes(:food)
+  end
+
   def create
     # creates a recipe
     # @user = current_user
@@ -30,6 +35,23 @@ class RecipesController < ApplicationController
     redirect_to recipes_path
   end
 
+  def public_recipes
+    @recipes = Recipe.where(public: true).order(created_at: :desc)
+  end
+
+  def toggle
+    @recipe = Recipe.find(params[:id])
+    @recipe.public = !@recipe.public
+    text = @recipe.public? ? 'public' : 'private'
+
+    if @recipe.save
+      flash[:notice] = "#{@recipe.name} is now #{text}!"
+    elsif @recipe.errors.any?
+      flash[:alert] = @recipe.errors.full_messages.first
+    end
+    redirect_to recipe_path(id: @recipe.id)
+  end
+
   private
 
   def set_user
@@ -38,9 +60,5 @@ class RecipesController < ApplicationController
 
   def recipe_params
     params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description, :public)
-  end
-
-  def public_recipes
-    @recipes = Recipe.where(public: true).order(created_at: :desc)
   end
 end
