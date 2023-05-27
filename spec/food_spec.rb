@@ -26,4 +26,7 @@ RSpec.describe Food, type: :model do
     @food.price = 'Hello'
     expect(@food).to_not be_valid
   end
+  it 'Should be valid if data is valid and supplied' do
+    expect(@food).to be_valid
+  end
 end
