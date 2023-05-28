@@ -71,9 +71,13 @@ class FoodsController < ApplicationController
   def shopping_list
     @foods = current_user.foods
     @recipe_id = params[:recipe_id]
-    @recipe = current_user.recipes.find(@recipe_id)
-    @shopping_list = generate_shopping_list(@recipe, @foods)
-    @total = calculate_total(@shopping_list)
+    @recipe = current_user.recipes.find_by(id: @recipe_id)
+    if @recipe.nil?
+      redirect_to '/public_recipes'
+    else
+      @shopping_list = generate_shopping_list(@recipe, @foods)
+      @total = calculate_total(@shopping_list)
+    end
   end
 
   def food_params
