@@ -24,7 +24,7 @@
 
 <div class="btn-container">
  <div class="btn-left">
-  <%= link_to 'Generate shoping list', new_food_path(), class: "btn btn-right mb-2" %>
+  <%= link_to 'Generate shoping list', "/shopping_list/#{@recipe.id}", class: "btn btn-right mb-2" %>
 </div>
 <div class="btn-right">
   <%= link_to 'Add ingredient', new_recipe_recipe_food_path(recipe_id: @recipe.id), class: "btn btn-right mb-2" %>
