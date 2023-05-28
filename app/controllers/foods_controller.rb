@@ -41,24 +41,38 @@ class FoodsController < ApplicationController
     total
   end
 
+  def generate_shopping_list(recipe, foods)
+    shopping_list = []
+    recipe.recipe_foods.each do |recipe_food|
+      existing_food = foods.find { |food| food.name == recipe_food.food.name }
+      difference = recipe_food.quantity - existing_food.quantity
+      next unless difference.positive?
+
+      existing_shopping_food = shopping_list.find { |element| element.food.name == recipe_food.food.name }
+      if existing_shopping_food.nil?
+        recipe_food.quantity = difference
+        shopping_list.push(recipe_food)
+      else
+        existing_shopping_food.quantity += recipe_food.quantity
+      end
+    end
+    shopping_list
+  end
+
   def general_shopping_list
     @foods = current_user.foods
     @shopping_list = []
     current_user.recipes.each do |recipe|
-      recipe.recipe_foods.each do |recipe_food|
-        existing_food = @foods.find { |food| food.name == recipe_food.food.name }
-        difference = recipe_food.quantity - existing_food.quantity
-        next unless difference.positive?
-
-        existing_shopping_food = @shopping_list.find { |element| element.food.name == recipe_food.food.name }
-        if existing_shopping_food.nil?
-          recipe_food.quantity = difference
-          @shopping_list.push(recipe_food)
-        else
-          existing_shopping_food.quantity += recipe_food.quantity
-        end
-      end
+      @shopping_list.concat(generate_shopping_list(recipe, @foods))
     end
+    @total = calculate_total(@shopping_list)
+  end
+
+  def shopping_list
+    @foods = current_user.foods
+    @recipe_id = params[:recipe_id]
+    @recipe = current_user.recipes.find(@recipe_id)
+    @shopping_list = generate_shopping_list(@recipe, @foods)
     @total = calculate_total(@shopping_list)
   end
 
