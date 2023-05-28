@@ -1,0 +1,28 @@
+one:
+  name: 'My first food'
+  measurement_unit: 'grams'
+  price: 2
+  updated_at: 2023-05-03 13:03:42
+  created_at: 2023-05-03 13:03:42
+  user: one
+two:
+  name: 'My second food'
+  measurement_unit: 'grams'
+  price: 1
+  updated_at: 2023-05-03 13:03:42
+  created_at: 2023-05-03 13:03:42
+  user: one
+three:
+  name: 'My third food'
+  measurement_unit: 'units'
+  price: 4
+  updated_at: 2023-05-03 13:03:42
+  created_at: 2023-05-03 13:03:42
+  user: two
+four:
+  name: 'My fourth food'
+  measurement_unit: 'units'
+  price: 3
+  updated_at: 2023-05-03 13:03:42
+  created_at: 2023-05-03 13:03:42
+  user: one

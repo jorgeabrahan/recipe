@@ -1,0 +1,63 @@
+  <h2 class="recipe-title"><%=@recipe.name%></h2>
+  <div class="recipe-detail">
+    <div class="recipe-detail-left">
+    <p><strong>Preparation time: <%=pluralize(@recipe.preparation_time, 'hour')%> </strong></p>
+    <p><strong>Cooking time: <%=pluralize(@recipe.cooking_time, 'hour')%></strong></p>
+    <p><%= @recipe.description %></p>
+  </div>
+
+  <div class="recipe-detail-right">
+  <%= form_for @recipe, url: toggle_public_path(id: @recipe.id), method: :post do |f| %>
+  <div class="swith-btn">
+    <p><%= @recipe.public? ? 'Public' : 'Private' %></p>
+    <label class="switch">
+    <div><%= f.submit "" %></div>
+      <%= f.check_box :public, { checked: @recipe.public } %>
+      <span class="slider round"></span>
+    </label>
+  </div>
+  </div>
+<% end %>
+
+  </div>
+
+
+<div class="btn-container">
+ <div class="btn-left">
+  <%= link_to 'Generate shoping list', "/shopping_list/#{@recipe.id}", class: "btn btn-right mb-2" %>
+</div>
+<div class="btn-right">
+  <%= link_to 'Add ingredient', new_recipe_recipe_food_path(recipe_id: @recipe.id), class: "btn btn-right mb-2" %>
+</div>
+</div>
+<span class="ligne"></span>
+
+<table class="table">
+  <thead>
+    <tr class="row row--header">
+      <th>Food</th>
+      <th>Quantity</th>
+      <th>Value</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @recipe_foods.includes(:food).each do |recipe_food| %>
+      <tr class="row">
+        <td class="align-middle"><%= recipe_food.food.name %></td>
+        <td class="text-center align-middle"><%= recipe_food.quantity %></td>
+        <td class="text-center align-middle">$<%= recipe_food.food.price * recipe_food.quantity %></td>
+        <td class="text-center align-middle">
+          <%= link_to edit_recipe_recipe_food_path(recipe_id: @recipe.id, id: recipe_food.id) do %>
+            <%= content_tag :i, nil%>
+            Modify
+          <% end %>
+          <%= link_to recipe_recipe_food_path(recipe_id: @recipe.id, id: recipe_food.id), data: {turbo_method: :delete, turbo_confirm: 'Delete this recipe food?'} do %>
+            <%= content_tag :i, nil %>
+            Remove
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

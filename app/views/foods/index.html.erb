@@ -1,0 +1,14 @@
+<% # INFO: This page is ment to display the current user foods! %>
+<section class="container m-block-2">
+  <%= link_to 'Add Food', new_food_path(), class: "btn btn-right mb-2" %>
+  <table class="table">
+    <tr class="row row--header">
+      <th>Food</th>
+      <th>Measurement unit</th>
+      <th>Unit price</th>
+      <th>Quantity</th>
+      <th>Actions</th>
+    </tr>
+    <%= render partial: 'food', collection: @foods %>
+  </table>
+</section>

@@ -1,0 +1,25 @@
+<section class="container m-block-2 m-block-4">
+  <%= form_with(model: @recipe, url: recipes_path) do |f| %>
+    <div class="field">
+      <%= f.label :name %>
+      <%= f.text_field :name, placeholder: 'e.g.: Pizza', required: true %>
+    </div>
+    <div class="field">
+      <%= f.label :preparation_time %>
+      <%= f.number_field :preparation_time, placeholder: 'e.g.: 2', required: true %>
+    </div>
+    <div class="field">
+      <%= f.label :cooking_time %>
+      <%= f.number_field :cooking_time, placeholder: 'e.g.: 1',min: 1, required: true %>
+    </div>
+    <div class="field">
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+    </div>
+     <div class="field check-box">
+      <%= f.label :public, "Do you want to make it public?" %>
+      <%= f.check_box :public%>
+    </div>
+    <%= f.submit class: "btn btn-right mb-2"  %>
+  <% end %>
+</section>

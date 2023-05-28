@@ -1,0 +1,36 @@
+one:
+  name: 'My first recipe'
+  preparation_time: 60
+  cooking_time: 120
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut eros consequat, porta dolor vitae, tempus eros. Quisque odio turpis, suscipit eu tortor eget, convallis finibus leo. Praesent dignissim ipsum vel justo hendrerit, eget tincidunt tortor dapibus.'
+  public: true
+  updated_at: 2023-05-03 13:03:42
+  created_at: 2023-05-03 13:03:42
+  user: one
+two:
+  name: 'My second recipe'
+  preparation_time: 80
+  cooking_time: 160
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut eros consequat, porta dolor vitae, tempus eros. Quisque odio turpis, suscipit eu tortor eget, convallis finibus leo. Praesent dignissim ipsum vel justo hendrerit, eget tincidunt tortor dapibus.'
+  public: false
+  updated_at: 2023-05-03 13:03:42
+  created_at: 2023-05-03 13:03:42
+  user: one
+three:
+  name: 'My third recipe'
+  preparation_time: 120
+  cooking_time: 240
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut eros consequat, porta dolor vitae, tempus eros. Quisque odio turpis, suscipit eu tortor eget, convallis finibus leo. Praesent dignissim ipsum vel justo hendrerit, eget tincidunt tortor dapibus.'
+  public: true
+  updated_at: 2023-05-03 13:03:42
+  created_at: 2023-05-03 13:03:42
+  user: two
+four:
+  name: 'My fourth recipe'
+  preparation_time: 40
+  cooking_time: 80
+  description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut eros consequat, porta dolor vitae, tempus eros. Quisque odio turpis, suscipit eu tortor eget, convallis finibus leo. Praesent dignissim ipsum vel justo hendrerit, eget tincidunt tortor dapibus.'
+  public: true
+  updated_at: 2023-05-03 13:03:42
+  created_at: 2023-05-03 13:03:42
+  user: one

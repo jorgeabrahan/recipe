@@ -1,0 +1,24 @@
+one:
+  quantity: 2
+  updated_at: 2023-05-03 13:03:42
+  created_at: 2023-05-03 13:03:42
+  food: one
+  recipe: one
+two:
+  quantity: 5
+  updated_at: 2023-05-03 13:03:42
+  created_at: 2023-05-03 13:03:42
+  food: two
+  recipe: one
+three:
+  quantity: 10
+  updated_at: 2023-05-03 13:03:42
+  created_at: 2023-05-03 13:03:42
+  food: three
+  recipe: three
+four:
+  quantity: 4
+  updated_at: 2023-05-03 13:03:42
+  created_at: 2023-05-03 13:03:42
+  food: four
+  recipe: two
