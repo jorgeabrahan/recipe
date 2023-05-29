@@ -185,9 +185,10 @@ rails test:system # for capybara tests
 - GitHub: [@jorgeabrahan](https://github.com/jorgeabrahan)
 - LinkedIn: [Jorge Abrahan](https://www.linkedin.com/in/jorge-siguenza/?locale=en_US)
 
-👤 **Jorge Abrahan**
+👤 **Amen TETTEH**
 
 - GitHub: [@amentetteh](https://github.com/amentetteh)
+- Linkedin: [@amentetteh]([https://github.com](https://www.linkedin.com/in/amentetteh)
 - Portfolio: [Amen TETTEH](https://amentetteh.github.io/amen-tetteh-portfolio/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
